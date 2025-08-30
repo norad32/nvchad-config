@@ -1,15 +1,36 @@
 return {
+  -- formatters
   {
     "stevearc/conform.nvim",
     event = "BufWritePre",
     opts = require "configs.conform",
   },
+
+  -- Mason
   {
-    "neovim/nvim-lspconfig",
-    config = function()
-      require "configs.lspconfig"
-    end,
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "black",
+        "debugpy",
+        "mypy",
+        "ruff-lsp",
+        "pyright",
+        "prettier",
+        "clangd",
+      },
+    },
   },
+  {
+    "jay-babu/mason-nvim-dap.nvim",
+    dependencies = { "williamboman/mason.nvim", "mfussenegger/nvim-dap" },
+    opts = {
+      ensure_installed = { "python" },
+      automatic_installation = true,
+    },
+  },
+
+  -- DAP
   {
     "mfussenegger/nvim-dap",
   },
@@ -46,20 +67,8 @@ return {
   {
     "nvim-neotest/nvim-nio",
   },
-  {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "black",
-        "debugpy",
-        "mypy",
-        "ruff-lsp",
-        "pyright",
-        "prettier",
-        "clangd",
-      },
-    },
-  },
+
+  -- LSP
   {
     "neovim/nvim-lspconfig",
     config = function()
