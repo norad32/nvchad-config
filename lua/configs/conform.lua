@@ -8,6 +8,8 @@ local options = {
     cpp = { "clang_format" },
     h = { "clang_format" },
     hpp = { "clang_format" },
+    markdown = { "prettier" },
+    yaml = { "prettier" },
   },
 
   format_on_save = {
