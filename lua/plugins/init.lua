@@ -18,6 +18,8 @@ return {
         "pyright",
         "prettier",
         "clangd",
+        "csharpier",
+        "omnisharp",
       },
     },
   },

@@ -9,6 +9,7 @@ local options = {
     cpp = { "clang_format" },
     h = { "clang_format" },
     hpp = { "clang_format" },
+    cs = { "csharpier" },
     markdown = { "prettier" },
     yaml = { "prettier" },
   },
